@@ -1,0 +1,50 @@
+name: Cypress Test
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install dependencies and build
+              run: |
+                  npm install --legacy-peer-deps
+                  npm run build  # Run 'next build' to generate production build
+
+            - name: Log environment variables
+              run: |
+                  echo "CYPRESS_API_BASE_URL: $CYPRESS_API_BASE_URL"
+                  echo "CYPRESS_PROJECT_URL: $CYPRESS_PROJECT_URL"
+                  echo "CYPRESS_HOME_URL: $CYPRESS_HOME_URL"
+
+    cypress-run:
+        needs: build
+        runs-on: ubuntu-22.04
+        strategy:
+            matrix:
+                machine: [1, 2, 3, 4, 5]
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: npm install --legacy-peer-deps
+
+            - name: Cypress run
+              uses: cypress-io/github-action@v6
+              with:
+                  record: true
+                  parallel: true
+                  group: 'ci-group'
+              env:
+                  CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+                  GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
+                  CYPRESS_API_BASE_URL: ${{ secrets.CYPRESS_API_BASE_URL }}
+                  CYPRESS_PROJECT_URL: ${{ secrets.CYPRESS_PROJECT_URL }}
+                  CYPRESS_HOME_URL: ${{ secrets.CYPRESS_HOME_URL }}

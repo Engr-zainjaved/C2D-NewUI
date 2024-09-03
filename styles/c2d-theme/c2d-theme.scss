@@ -1,0 +1,34 @@
+@import './index';
+@import './app-theme';
+
+// layouts
+@import './layout/project-header';
+
+// views
+@import '../../views/components/Modal/modal';
+@import '../../views/Projects/ControlHeader/control-header';
+@import '../../views/Projects/GridCard/grid-card';
+@import '../../views/Projects/ListCard/list-card';
+@import '../../views/Projects/Details/project-details';
+@import '../../views/Notifications/notification-item';
+@import '../../views/ProjectSettings/project-settings';
+@import '../../views/ProfileSettings/profile-settings';
+
+// styles
+.app > .wrapper{
+    background-color: $extra-light-bg;
+}
+.projects-container{
+    @media (min-width: 1400px) {
+        max-width: 1214px !important;
+    }
+}
+.projects-list-container{
+    @media (min-width: 1600px) {
+        max-width: 1425px !important;
+    }
+}
+
+.fade-out-bottom{
+    mask-image: linear-gradient(#000 80%, rgba(#000, 0) 100%);
+}

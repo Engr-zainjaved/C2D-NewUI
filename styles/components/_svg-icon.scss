@@ -1,0 +1,18 @@
+//
+//	SVG Icon
+//
+.svg-icon {
+	width: 24px;
+	height: 24px;
+	// Sizes
+	@each $name, $value in $icon-sizes {
+		&-#{$name} {
+			@include font-size($value);
+		}
+	}
+}
+
+// Materiel Color
+// .svg-icon--material {
+// 	fill: currentColor;
+// }

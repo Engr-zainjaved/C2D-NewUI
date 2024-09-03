@@ -1,0 +1,31 @@
+$tomato-grotesk-font-path: '../../fonts/TomatoGrotesk/';
+@font-face {
+    font-family: "Tomato Grotesk";
+    src: url(#{$tomato-grotesk-font-path}TomatoGrotesk-Light.otf) format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Tomato Grotesk";
+    src: url(#{$tomato-grotesk-font-path}TomatoGrotesk-Regular.otf) format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Tomato Grotesk";
+    src: url(#{$tomato-grotesk-font-path}TomatoGrotesk-Medium.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Tomato Grotesk";
+    src: url(#{$tomato-grotesk-font-path}TomatoGrotesk-SemiBold.otf) format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Tomato Grotesk";
+    src: url(#{$tomato-grotesk-font-path}TomatoGrotesk-ExtraBold.otf) format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}

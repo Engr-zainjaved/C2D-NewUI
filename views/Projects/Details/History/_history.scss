@@ -1,0 +1,119 @@
+.history-wrapper {
+  gap: 24px;
+  .date-divider {
+    font-weight: 500;
+    font-size: 14px;
+    color: #9ea9bc;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    &::after {
+      content: '';
+      height: 1px;
+      background-color: #ccd2dc;
+      flex-grow: 1;
+    }
+  }
+  .history-item-wrapper {
+    width: 100%;
+    background-color: $white;
+    border-radius: 16px;
+    padding: 12px;
+    .btn.connect {
+      background-color: #2a7166;
+      border-radius: 8px;
+      border: none;
+      min-width: unset;
+      min-width: 98px;
+      padding: 0;
+      height: 48px;
+      box-shadow: inset 0 0 17px rgba(#fff, 0.5);
+      font-family: $font-primary;
+      font-weight: 600;
+      font-size: 14px;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+    .btn.rebuild {
+      background-color: #2733bb;
+      border-radius: 8px;
+      border: none;
+      min-width: unset;
+      min-width: 98px;
+      padding: 0;
+      height: 48px;
+      box-shadow: inset 0 0 17px rgba(#fff, 0.5);
+      font-family: $font-primary;
+      font-weight: 600;
+      font-size: 14px;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+    .btn.dropped {
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      border: none;
+      min-width: unset;
+      min-width: 98px;
+      padding: 0;
+      height: 48px;
+      box-shadow: inset 0 0 17px rgba(#fff, 0.5);
+      font-family: $font-primary;
+      font-weight: 600;
+      font-size: 14px;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+    .stage-heading {
+      font-size: 20px;
+      font-weight: 500;
+      b {
+        font-weight: 600;
+      }
+    }
+    .commit {
+      width: 100%;
+      background-color: $extra-light-bg;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      &.stage-commit {
+        color: $text-secondary;
+        font-size: 15px;
+      }
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+      .commit-code {
+        color: #9ea9bc;
+        font-size: 14px;
+        .svg-icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    .commit-user {
+      padding: 6px;
+      font-size: 14px;
+      color: $black;
+      line-height: 1;
+      .profile-photo {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    .commit-details {
+      color: #9ea9bc;
+      font-size: 14px;
+      span {
+        line-height: 1;
+      }
+    }
+  }
+}

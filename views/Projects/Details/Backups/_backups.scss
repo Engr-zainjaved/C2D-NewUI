@@ -1,0 +1,127 @@
+.backups-wrapper {
+  width: 100%;
+  max-width: 100%;
+  background-color: $white;
+  border-radius: 16px 16px 0 0;
+  flex-grow: 1;
+  height: 20px;
+
+  .backups-header {
+    padding: 24px;
+    border-bottom: 1px solid $sidebar-divider;
+    gap: 24px;
+  }
+
+  .backups-scrolller {
+    padding: 24px;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.backups-table {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  thead {
+    tr th {
+      font-weight: 500;
+      font-size: 14px;
+      color: $text-secondary;
+      padding-bottom: 16px;
+      padding-inline: 16px;
+    }
+  }
+
+  tbody {
+    tr {
+      border-radius: 8px;
+      position: relative;
+      td {
+        &:first-child {
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+        }
+        &:last-child {
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+        &:nth-last-child(2) {
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+        height: 60px;
+        font-weight: 500;
+        font-size: 15px;
+        color: #292a36;
+        padding-block: 8px;
+        padding-inline: 16px;
+        white-space: nowrap;
+
+        &.revision {
+          color: #7e85d9;
+        }
+
+        .chip {
+          background-color: #eaeef5;
+          font-size: 14px;
+          color: #757d88;
+          border: 1px solid transparent;
+          padding: 8px 16px;
+          text-align: center;
+          &.success {
+            background-color: #daf2ee;
+            border-color: #c8ebe6;
+            color: #2a7166;
+          }
+          &.pending {
+            background-color: #fff5dc;
+            border-color: #fff1cb;
+            color: #776536;
+          }
+          &.info {
+            background-color: #dbe1fe;
+            border-color: #cad2fe;
+            color: #37479b;
+          }
+          &.error {
+            background-color: #fdddd3;
+            border-color: #fbccbc;
+            color: #993d20;
+          }
+        }
+        &.actions {
+          position: absolute;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          display: flex;
+          gap: 8px;
+          background-color: $white;
+          display: none;
+        }
+      }
+      &:hover {
+        td {
+          background-color: $extra-light-bg;
+          &:nth-last-child(2),
+          &:nth-last-child(3) {
+            display: none;
+          }
+          &.actions {
+            display: table-cell;
+          }
+        }
+      }
+    }
+  }
+}
+
+.alert-body {
+  .svg-icon {
+    min-width: 18px;
+    min-height: 18px;
+  }
+  font-size: 14px;
+}

@@ -1,0 +1,15 @@
+.c2d-dropdown{
+    .dropdown-menu{
+        box-shadow: 0 0 4px rgba(#000, 0.1);
+    }
+    .dropdown-item-wrapper{
+        &:has(.dropdown-divider){
+            padding-inline: 0;
+        }
+        .dropdown-item{
+            font-size: 16px;
+            font-weight: 500;
+            color: $black;
+        }
+    }
+}

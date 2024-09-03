@@ -1,0 +1,171 @@
+@import '../../styles/c2d-theme/index';
+@import '../../styles/c2d-theme/public-theme';
+@import './comps//comps';
+
+// all styles
+.section-heading{
+    font-size: $heading-size;
+    font-weight: bold;
+}
+.sub-text{
+    font-size: 32px;
+    font-weight: 500;
+    span{
+        font-size: inherit;
+        color: $primary-main;
+    }
+}
+
+.main-header{
+    background-color: $white;
+    box-shadow: 0 4px 20px rgba(#000000, 0.1);
+    border-bottom: 1px solid $light;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    height: fit-content;
+    .inner-wrapper{
+        padding-block: 24px;
+        .logo{
+            height: 40px;
+            width: auto;
+        }
+        .nav-links{
+            padding-inline: 24px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            .nav-link{
+                color: $black;
+                text-decoration: none;
+                transition: 0.15s ease all;
+                padding-inline: 16px;
+                padding-block: 8px;
+                font-size: 16px;
+                line-height: 1;
+                &:hover{
+                    color: $primary-main;
+                }
+            }
+        }
+    }
+}
+
+// hero section
+.hero-section{
+    padding-top: 62px;
+    color: $black;
+    h1{
+        margin-bottom: 0;
+        line-height: 1;
+    }
+    p{
+        line-height: 1;
+        margin-bottom: 32px;
+        span{
+            font-weight: bold;
+        }
+    }
+    .hero-cover-wrapper{
+        text-align: center;
+        padding-top: 110px;
+        .hero-cover{
+            width: 100%;
+            height: auto;
+            max-width: 1200px;
+            margin-inline: auto;
+        }
+    }
+}
+
+// Dev First
+.dev-first-section{
+    padding-block: $section-py;
+    background-color: $light-bg;
+    h2{
+        margin: 0;
+        span{
+            color: $primary-main;
+        }
+    }
+    .dev-image{
+        width: 100%;
+        height: auto;
+    }
+}
+
+// Discover Hosting
+.discover-hosting-section{
+    padding-block: $section-py;
+    h2{
+        font-weight: 200;
+        margin: 0;
+        span{
+            font-weight: bold;
+            color: $primary-main;
+        }
+    }
+}
+
+// PassLaas
+.passlaas-section{
+    padding-block: $section-py;
+    background-color: $primary-main;
+    h2{
+        margin: 0;
+        font-weight: 100;
+        span{
+            font-weight: 600;
+        }
+    }
+    p{
+        margin: 0;
+        line-height: 1;
+        font-weight: 300;
+    }
+    .custom-grid{
+        margin-top: 52px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 24px;
+        row-gap: 56px;
+    }
+}
+
+// Enterprise grade
+.enterprise-grade-section{
+    padding-block: $section-py;
+    background-color: $light-bg;
+    h2{
+        margin: 0;
+        font-weight: 100;
+        span{
+            font-weight: 600;
+            color: $primary-main;
+        }
+    }
+    p{
+        margin: 0;
+        line-height: 1;
+        font-weight: 300;
+    }
+    .enterprise-image{
+        width: 100%;
+        height: auto;
+        margin-block: 110px;
+    }
+}
+
+// footer
+.home-footer{
+    padding-block: 30px;
+    background-color: $primary-main;
+    .social-links{
+        a{
+            padding: 8px;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+.project-grid-card{
+    border-radius: 16px;
+    box-shadow: $light-shadow;
+    padding: 18px 16px;
+    border: 1px solid $white;
+    &:hover{
+        border-color: $primary-main;
+    }
+    .avatar-group{
+        .avatar{
+            border-width: 5px !important;
+            box-sizing: border-box;
+            box-shadow: $light-shadow;
+        }
+    }
+    .c2d-icon-btn{
+        color: $black;
+        box-shadow: none;
+        &:hover{
+            background-color: $light-bg;
+        }
+        svg{
+            width: 24px;
+            height: 24px;
+        }
+    }
+    .titles{
+        span{
+            display: block;
+            color: #9BA1AC;
+            font-size: 11px;
+        }
+        h4{
+            font-size: 24px;
+            color: $black;
+            font-weight: 600;
+            width: 100%;
+            word-break: break-all;
+        }
+        margin-bottom: 16px;
+    }
+
+    .tags{
+        gap: 8px;
+        margin-bottom: 24px;
+        margin-top: auto;
+        .tag{
+            padding: 8px 16px 8px 8px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            line-height: 1;
+            background-color: #EAEEF5;
+            color: #7E8590;
+            text-transform: capitalize;
+            svg{
+                width: 20px;
+                height: 20px;
+            }
+            &.prod{
+                background-color: #E2DFF6;
+                color: #41387F;
+            }
+            &.trial{
+                background-color: #FFF5DC;
+                color: #665321;
+            }
+        }
+    }
+}

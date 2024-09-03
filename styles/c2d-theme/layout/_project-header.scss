@@ -1,0 +1,62 @@
+.project-header {
+    background-color: $white;
+    border-bottom: 1px solid $light-border;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    height: fit-content;
+    padding: 18px 24px;
+    &.project-details-header{
+        background-color: transparent;
+        border-bottom: none;
+        width: fit-content;
+        left: auto;
+        position: fixed;
+        z-index: 999;
+        right: 0;
+        padding: 16px;
+        .items-wrapper{
+            gap: 16px;
+            .header-item{
+                background-color: $white;
+                box-shadow: 0 0 4px rgba(#000, 0.1);
+                padding: 12px;
+            }
+        }
+    }
+
+    .user-profile {
+        .btn-link {
+            color: $black;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+        }
+
+        .profile-photo {
+            box-shadow: 0 0 20px rgba($primary-main, 0.05);
+        }
+    }
+}
+.offcanvas#notifications{
+    min-width: 566px;
+    font-family: $font-primary;
+    .notifications-header{
+        padding-inline: 24px;
+        padding-block: 32px;
+        h5{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-family: $font-primary;
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0;
+        }
+    }
+    .notifications-body{
+        padding-inline: 24px;
+    }
+}

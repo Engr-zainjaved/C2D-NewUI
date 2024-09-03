@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'theme-colors';
+@import 'public-theme';
+@import 'local-fonts';
+
+// typography
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: "Tomato Grotesk", sans-serif;
+
+body{
+    font-family: $font-primary;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.container{
+    max-width: 1448px;
+}

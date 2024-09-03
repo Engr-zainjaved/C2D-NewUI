@@ -1,0 +1,30 @@
+.modal.c2d-modal {
+  .modal-dialog {
+    @media (min-width: 576px) {
+      max-width: 600px;
+    }
+  }
+  .c2d-modal-header {
+    padding: 24px;
+    border-bottom: 1px solid #e0e6ef;
+    .modal-title {
+      margin: 0;
+      line-height: 1;
+      font-weight: 600;
+      font-size: 24px;
+      font-family: $font-primary !important;
+      .svg-icon {
+        color: $primary-main;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+    }
+    .btn-close {
+      margin-right: 8px;
+    }
+  }
+  .c2d-modal-body {
+    padding: 24px;
+  }
+}

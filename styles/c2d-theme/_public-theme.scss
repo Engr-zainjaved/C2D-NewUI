@@ -1,0 +1,34 @@
+$heading-size: 62px;
+$subText-size: 32px;
+
+$section-py: 120px;
+$section-pt: 120px;
+$section-pb: 120px;
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Tomato Grotesk", sans-serif !important;
+}
+
+.btn{
+    font-family: "Tomato Grotesk", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 16px 32px;
+    line-height: 1;
+    min-width: 136px;
+    &.btn-public-outline{
+        border-color: $black;
+        color: $black;
+    }
+    &.btn-public{
+        border-color: $primary-main;
+        background-color: $primary-main;
+        color: $white;
+    }
+    &.btn-public-secondary{
+        border-color: $white;
+        background-color: $white;
+        color: $black;
+    }
+}

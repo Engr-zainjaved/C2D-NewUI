@@ -1,0 +1,39 @@
+.videoWrapper{
+    width: 100%;
+    min-height: 440px;
+    border-radius: 16px;
+    background-color: $light-bg;
+    overflow: hidden;
+    position: relative;
+    .palyBtn{
+        color: $primary-main;
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.feature-card{
+    background-color: $white;
+    min-height: 120px;
+    padding: 24px;
+    .card-icon{
+        width: 100%;
+        max-width: 120px;
+        margin-inline: auto;
+        margin-bottom: 14px;
+    }
+    h4{
+        font-size: 26px;
+        font-weight: 400;
+        color: $black;
+        margin-bottom: 16px;
+    }
+    p{
+        font-size: 16px;
+        font-weight: 400;
+        color: $gray;
+    }
+}

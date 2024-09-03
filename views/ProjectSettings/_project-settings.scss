@@ -1,0 +1,109 @@
+.project-settings-container{
+    max-width: 972px;
+    width: 100%;
+    margin-inline: auto;
+    padding-block: 62px;
+    .project-settings-inner-wrapper{    
+        background-color: $white;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(#5963CC, 0.2);
+    }
+    .project-settings-header{
+        padding: 24px;
+        border-bottom: 1px solid $sidebar-divider;
+        gap: 24px;
+        h3{
+            font-family: $font-primary !important;
+            color: $black;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 1;
+            margin: 0;
+        }
+    }
+    .project-settings-body{
+        padding: 24px 32px;
+        .ps-h{
+            font-size: 16px;
+            color: $black;
+            margin: 0;
+            margin-block: 16px;
+            line-height: 1;
+            font-family: $font-primary !important;
+        }
+        .settings-user-wrapper{
+            padding-inline: 8px;
+            .github-user{ 
+                font-size: 16px;
+                font-weight: 600;
+                color: $black;
+                line-height: 1;
+                gap: 8px;
+                .profile-photo{
+                    width: 36px;
+                    height: 36px;
+                }
+                span{
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 1;
+                    color: #9EA9BC;
+                }
+            }
+            .c2d-select{
+                min-height: 40px;
+                border-radius: 4px;
+                border-color: #C9CFD9;
+                background-color: $extra-light-bg;
+                font-size: 16px;
+                color: $text-secondary;
+                font-weight: 500;
+            }
+            .c2d-icon-btn{
+                min-width: 40px;
+                height: 40px;
+                background-color: #A62F27;
+                color: #fff;
+                border-radius: 4px !important;
+                svg{
+                    width: 24px;
+                    height: 24px;
+                }
+                &:hover{
+                    background-color: rgba(#A62F27, 0.7);
+                }
+            }
+        }
+        .form-check{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            .accessCheck{
+                width: 24px;
+                height: 24px;
+            }
+            label{
+                line-height: 1;
+                margin-top: 4px;
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+        .alert.rounded-1{
+            border-radius: 4px !important;
+        }
+        .counts-input{
+            max-width: 240px;
+            &.ci-lg{
+                max-width: 260px;
+            }
+            input{
+                text-align: center;
+                border-right: 1px solid $divider;
+            }
+            .input-group-text{
+                background-color: transparent;
+            }
+        }
+    }
+}

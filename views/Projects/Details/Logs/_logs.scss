@@ -1,0 +1,66 @@
+.logs-wrapper{
+    width: 100%;
+    background-color: $white;
+    border-radius: 16px 16px 0 0;
+    flex-grow: 1;
+    height: 20px;
+    .logs-header{
+        padding: 24px;
+        border-bottom: 1px solid $sidebar-divider;
+        gap: 24px;
+        .header-field{
+            max-width: 320px;
+            &.form-select{
+                border: none;
+                box-shadow: none;
+                font-weight: 500;
+                border: 1px solid $divider;
+                border-radius: 10px;
+                min-height: 48px;
+                &::placeholder{
+                    color: #9EA9BC;
+                }
+            }
+        }
+        .input-group{
+            border: 1px solid $divider;
+            border-radius: 10px;
+            .input-group-text{
+                border: none;
+                background-color: #DEE3EC;
+                color: #6C757D;
+                font-weight: 500;
+                font-size: 16px;
+                min-height: 48px;
+                min-width: 74px;
+                border-top-left-radius: 9px;
+                border-bottom-left-radius: 9px;
+                justify-content: center;
+            }
+            .form-control,.form-select{
+                border: none;
+                border-top-right-radius: 9px;
+                border-bottom-right-radius: 9px;
+                box-shadow: none;
+                font-weight: 500;
+                &::placeholder{
+                    color: #9EA9BC;
+                }
+            }
+        }
+    }
+    .logs-scrollar{
+        padding: 24px;
+        overflow: auto;
+        height: 100%;
+        font-size: 14px;
+        font-weight: 400;
+        color: $text-secondary;
+        width: 100%;
+        pre{
+            font-family: $font-primary;
+            display: block;
+            margin-bottom: 24px;
+        }
+    }
+}
