@@ -94,11 +94,7 @@ const Index: NextPage = () => {
     const lsBackendToken = localStorage.getItem('backendToken');
     if (!lsBackendToken && session) {
       fetchData();
-    } else {
-      if (lsBackendToken) {
-        getProjects();
-      }
-    }
+    } 
   }, [session]);
 
   useEffect(() => {
