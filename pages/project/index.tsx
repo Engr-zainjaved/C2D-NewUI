@@ -65,12 +65,7 @@ const Index: NextPage = () => {
     localStorage.removeItem('branchId');
   }, []);
 
-  useEffect(() => {
-    const lsBackendToken = localStorage.getItem('backendToken');
-    if (lsBackendToken) {
-      getProjects();
-    }
-  }, [getProjectsCheck]);
+ 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -86,15 +81,18 @@ const Index: NextPage = () => {
         {
           email && localStorage.setItem('userEmail', email);
         }
-        gitHubLoginApi(accessToken, email).then(() => {
-          getProjects();
-        });
+        gitHubLoginApi(accessToken, email)
       }
     };
     const lsBackendToken = localStorage.getItem('backendToken');
-    if (!lsBackendToken && session) {
-      fetchData();
-    } 
+    if (session) {
+      if (!lsBackendToken) {
+        fetchData();
+      } else {
+        getProjects();
+      }
+    }
+  
   }, [session]);
 
   useEffect(() => {
