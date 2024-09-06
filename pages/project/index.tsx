@@ -97,7 +97,7 @@ const Index: NextPage = () => {
       }
     }
   
-  }, [session]);
+  }, [session, getProjectsCheck]);
  
 
   useEffect(() => {
