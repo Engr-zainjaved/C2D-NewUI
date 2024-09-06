@@ -66,7 +66,6 @@ const Index: NextPage = () => {
   }, []);
 
  
-
   useEffect(() => {
     const fetchData = async () => {
       if (session && 'accessToken' in session && session.accessToken && session.user && session.user.email) {
@@ -81,7 +80,12 @@ const Index: NextPage = () => {
         {
           email && localStorage.setItem('userEmail', email);
         }
-        gitHubLoginApi(accessToken, email)
+        gitHubLoginApi(accessToken, email).then(() => {
+          
+            getProjects();
+          
+         
+        });
       }
     };
     const lsBackendToken = localStorage.getItem('backendToken');
@@ -94,6 +98,7 @@ const Index: NextPage = () => {
     }
   
   }, [session]);
+ 
 
   useEffect(() => {
     if (projectData) {
