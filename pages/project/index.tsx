@@ -66,13 +66,6 @@ const Index: NextPage = () => {
   }, []);
 
   useEffect(() => {
-    const lsBackendToken = localStorage.getItem('backendToken');
-    if (lsBackendToken) {
-      getProjects();
-    }
-  }, [getProjectsCheck]);
-
-  useEffect(() => {
     const fetchData = async () => {
       if (session && 'accessToken' in session && session.accessToken && session.user && session.user.email) {
         let { accessToken, user } = session;
@@ -93,13 +86,13 @@ const Index: NextPage = () => {
     };
     const lsBackendToken = localStorage.getItem('backendToken');
     if (!lsBackendToken && session) {
-      fetchData();
+      getProjects();
     } else {
       if (lsBackendToken) {
-        getProjects();
+        fetchData();
       }
     }
-  }, [session]);
+  }, [session, getProjectsCheck]);
 
   useEffect(() => {
     if (projectData) {
