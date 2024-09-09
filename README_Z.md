@@ -7,5 +7,5 @@ Task 2:
 =>Explored project folder.
 =>Explored pages folder.
 =>Cheched the output of create file.
-=>Checked the project details file.
+
 
