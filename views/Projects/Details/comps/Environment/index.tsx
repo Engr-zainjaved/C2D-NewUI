@@ -10,12 +10,14 @@ import Icon from '../../../../../components/icon/Icon';
 import Branch from './Branch';
 import { ICreateBranch } from '../../../../../type/common-interface';
 import { useMutation, useQueryClient } from 'react-query';
-import { createBranch } from '../../../../../apis';
+import { createBranch, getProjectBranches, getProjects, getProjectTracking } from '../../../../../apis';
 import Spinner from '../../../../../components/bootstrap/Spinner';
 import C2DModal from '../../../../components/Modal';
 import request from '../../../../../common/lib/axios';
 import { useProjectContext } from '../../../../../context/projectContext';
 import { handleApiSuccess } from '../../../../../common/function/apiHelper/apiSuccess';
+import { updateAllBranches } from '../../../../../common/function/utilities';
+import { findEnvironment } from '../../../../../common/function/branchBelongToWhichStage';
 
 interface BuildInfo {
   url: string;
@@ -60,6 +62,7 @@ const Environment: React.FC<Props> = ({
   forkable,
   branches,
   onBranchCreated,
+  
   onBranchSelect,
   selectedBranchId,
   setSelectedBranchId,
@@ -72,6 +75,8 @@ const Environment: React.FC<Props> = ({
   const [openModal, setOpenModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [draggedBranchId, setDraggedBranchId] = useState<number | null>(null);
+  
+  
   const queryClient = useQueryClient();
 
   const mutation = useMutation(
@@ -79,9 +84,12 @@ const Environment: React.FC<Props> = ({
     {
       onSuccess: (response) => {
         handleApiSuccess(response);
-        if (onBranchCreated) {
-          onBranchCreated();
-        }
+        
+       // if (onBranchCreated) {
+       //   onBranchCreated();
+       // }
+       const data= getProjectBranches(projectId);
+       console.log(data);
       },
     },
   );
@@ -124,8 +132,13 @@ const Environment: React.FC<Props> = ({
       .patch(apiUrl, { stage: targetStageId })
       .then((response) => {
         handleApiSuccess(response);
-        queryClient.invalidateQueries(['projectBranches', projectId]);
-        return queryClient.fetchQuery(['projectBranches', projectId]);
+        getProjectBranches(projectId);
+        if(onBranchCreated){
+           onBranchCreated();
+        }
+        
+       
+        
       })
       .finally(() => {
         setIsLoading(false);
