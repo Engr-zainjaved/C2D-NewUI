@@ -15,6 +15,8 @@ import { useRouter } from 'next/router';
 import { handleApiResponse } from '../../../common/function/apiHelper/apiResponse';
 import { toast } from 'react-toastify';
 
+
+
 // interface Branches {
 //   id: number;
 //   name: string;
@@ -52,12 +54,14 @@ const Sidebar = React.memo(() => {
 
   useEffect(() => {
     getProjectBranches();
+    
   }, []);
 
   const getProjectTracking = async (id: any) => {
     const apiUrl = `/user/project/${projectId}/branches/${id}/tracking/`;
     const response = await request.get(apiUrl);
     setProjectData(response.data.data);
+    
   };
 
   useEffect(() => {
@@ -91,11 +95,18 @@ const Sidebar = React.memo(() => {
   }, [branchData]);
 
   const handleBranchCreated = () => {
-    queryClient.invalidateQueries(['projectBranches', projectId]);
+    
+    getProjectBranches();
+    
+    
+    
   };
 
   const filterBranchesByEnvironment = (branches: any[]) => {
+    
     return branches && branches.filter((branch) => branch.name.toLowerCase().includes(search.toLowerCase()));
+    
+    
   };
 
   const handleBranchSelect = (id: number) => {
@@ -104,7 +115,9 @@ const Sidebar = React.memo(() => {
     stage = findEnvironment(id, branchData);
     if (stage) {
       localStorage.setItem('currentStage', stage);
+    
     }
+    
   };
 
   return (

@@ -16,7 +16,7 @@ export const deployProject = async (payload: IDeployProjectPayload) => {
   return res;
 };
 
-export const getProjectBranches = async (projectId: string) => {
+export const getProjectBranches = async (projectId: string| number) => {
   const res = await request.get(`/user/project/${projectId}/branches/`);
   return { data: res.data.data, message: res.data.message };
 };
