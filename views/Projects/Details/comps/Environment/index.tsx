@@ -16,8 +16,7 @@ import C2DModal from '../../../../components/Modal';
 import request from '../../../../../common/lib/axios';
 import { useProjectContext } from '../../../../../context/projectContext';
 import { handleApiSuccess } from '../../../../../common/function/apiHelper/apiSuccess';
-import { updateAllBranches } from '../../../../../common/function/utilities';
-import { findEnvironment } from '../../../../../common/function/branchBelongToWhichStage';
+
 
 interface BuildInfo {
   url: string;
@@ -62,7 +61,6 @@ const Environment: React.FC<Props> = ({
   forkable,
   branches,
   onBranchCreated,
-  
   onBranchSelect,
   selectedBranchId,
   setSelectedBranchId,
@@ -85,7 +83,7 @@ const Environment: React.FC<Props> = ({
       onSuccess: (response) => {
         handleApiSuccess(response);
         
-       // if (onBranchCreated) {
+       //if (onBranchCreated) {
        //   onBranchCreated();
        // }
        const data= getProjectBranches(projectId);

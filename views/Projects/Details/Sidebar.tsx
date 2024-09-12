@@ -14,8 +14,8 @@ import { findEnvironment } from '../../../common/function/branchBelongToWhichSta
 import { useRouter } from 'next/router';
 import { handleApiResponse } from '../../../common/function/apiHelper/apiResponse';
 import { toast } from 'react-toastify';
-import { getProjects } from '../../../apis';
-import Id from '../../../pages/appointment/employee/[id]';
+
+
 
 // interface Branches {
 //   id: number;
